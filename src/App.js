@@ -6,21 +6,22 @@ import {
   Redirect,
 } from 'react-router-dom'
 
-import { Navbar } from './app/Navbar'
+import { AddToDoForm } from './features/toDos/addToDoForm'
+import { ToDoList } from './features/toDos/toDoList'
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <div className="App">
         <Switch>
           <Route
             exact
             path="/"
             render={() => (
-              <section>
-                <h2>Welcome to the Redux Essentials example app!</h2>
-              </section>
+              <React.Fragment>
+                <AddToDoForm />
+                <ToDoList />
+              </React.Fragment>
             )}
           />
           <Redirect to="/" />
